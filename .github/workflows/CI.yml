@@ -6,5 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - run: git config --global core.autocrlf false
       - run: rm .github -r
       - run: (Get-Content 'sample.sh' -Raw) -match "\r\n"
